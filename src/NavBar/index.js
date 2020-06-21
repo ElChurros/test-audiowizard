@@ -10,9 +10,7 @@ export const NavBar = forwardRef(({className, props}, ref) => {
         <span className='navbar-toggler-icon'></span>
       </button>
       <a className='nav-link' href='#'>
-        <button className='btn btn-dark'>
-          Mon compte
-        </button>
+        <button className='btn btn-dark'>Mon compte</button>
       </a>
     </nav>
   );
