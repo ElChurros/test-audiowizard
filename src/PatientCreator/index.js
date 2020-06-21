@@ -21,7 +21,7 @@ export function PatientCreator({className, ...props}) {
         {step === 1 && <SexEditor nextStep={() => setStep(step + 1)} />}
         {step === 2 && <Recap/>}
       </div>
-      <div>
+      <div className='d-flex justify-content-center'>
         {step === 0 &&
           <button onClick={() => {context.patient.firstName.length > 0 && context.patient.lastName.length > 0 && setStep(step + 1)}} className='btn'>
             <svg class="bi bi-arrow-right-square-fill" width="3rem" height="3rem" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
