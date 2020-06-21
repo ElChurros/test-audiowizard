@@ -9,7 +9,11 @@ export const NavBar = forwardRef(({className, props}, ref) => {
       <button className='navbar-toggler position-absolute d-md-none collapsed' onClick={() => ref.current.classList.toggle('show')}>
         <span className='navbar-toggler-icon'></span>
       </button>
-      <a className='nav-link' href='#'>Mon compte</a>
+      <a className='nav-link' href='#'>
+        <button className='btn btn-dark'>
+          Mon compte
+        </button>
+      </a>
     </nav>
   );
 });
