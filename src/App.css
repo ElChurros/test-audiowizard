@@ -7,6 +7,11 @@
   padding-bottom: .25rem;
 }
 
+.navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+} 
+
 /*
   Sidebar
 */

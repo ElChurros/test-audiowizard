@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-export function SideBar({className, ...props}) {
+export const SideBar = forwardRef(({className, ...props}, ref) => {
   return (
-    <nav className={`sidebar col-md-3 col-lg-2 d-md-block bg-light ${className ? className : ''}`}>
+    <nav ref={ref} className={`sidebar col-md-3 col-lg-2 d-md-block bg-light collapse ${className ? className : ''}`}>
       <div className='sidebar-sticky pt-3'>
         <a className='nav-link' href='#'>Link 1</a>
         <a className='nav-link' href='#'>Link 2</a>
@@ -10,6 +10,6 @@ export function SideBar({className, ...props}) {
       </div>
     </nav>
   );
-}
+})
 
 export default SideBar;
