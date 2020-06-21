@@ -13,7 +13,8 @@ function App() {
       <div className='container-fluid'>
         <div className='row'>
           <SideBar ref={sidebar}/>
-          <main>
+          <main className='col-md-9 col-lg-10 ml-sm-auto px-md-4'>
+            
           </main>
         </div>
       </div>
