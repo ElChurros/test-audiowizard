@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react';
+import React from 'react';
 
 import Context from './context';
 import NavBar from './NavBar';
