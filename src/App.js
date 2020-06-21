@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, { Component, createRef } from 'react';
 
 import Context from './context';
 import NavBar from './NavBar';
@@ -6,31 +6,37 @@ import SideBar from './SideBar';
 import PatientCreator from './PatientCreator';
 import './App.css';
 
-function App() {
-  const [state, setState] = useState({
-    patient: {
-      firstName: '',
-      setFirstName: (firstName) => setState({patient: {...state.patient, firstName: firstName}}),
-      lastName: '',
-      setLastName: (lastName) => setState({patient: {...state.patient, lastName: lastName}}),
-      sex: '',
-      setsex: (sex) => setState({patient: {...state.patient, sex: sex}}),
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      patient: {
+        firstName: '',
+        setFirstName: (firstName) => this.setState({patient: {...this.state.patient, firstName: firstName}}),
+        lastName: '',
+        setLastName: (lastName) => this.setState({patient: {...this.state.patient, lastName: lastName}}),
+        sex: '',
+        setsex: (sex) => this.setState({patient: {...this.state.patient, sex: sex}}),
+      }
     }
-  })
-  const sidebar = useRef();
-  return (
-    <Context.Provider value={state}>
-      <NavBar ref={sidebar}/>
-      <div className='container-fluid'>
-        <div className='row'>
-          <SideBar ref={sidebar}/>
-          <main className='col-md-9 col-lg-10 ml-sm-auto p-md-4'>
-            <PatientCreator />
-          </main>
+    this.sidebar = React.createRef();
+  }
+
+  render() {
+    return (
+      <Context.Provider value={this.state}>
+        <NavBar ref={this.sidebar}/>
+        <div className='container-fluid'>
+          <div className='row'>
+            <SideBar ref={this.sidebar}/>
+            <main className='col-md-9 col-lg-10 ml-sm-auto p-md-4'>
+              <PatientCreator />
+            </main>
+          </div>
         </div>
-      </div>
-    </Context.Provider>
-  );
+      </Context.Provider>
+    );
+  }
 }
 
 export default App;
