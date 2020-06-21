@@ -16,7 +16,7 @@ class App extends React.Component {
         lastName: '',
         setLastName: (lastName) => this.setState({patient: {...this.state.patient, lastName: lastName}}),
         sex: '',
-        setsex: (sex) => this.setState({patient: {...this.state.patient, sex: sex}}),
+        setSex: (sex) => this.setState({patient: {...this.state.patient, sex: sex}}),
       }
     }
     this.sidebar = React.createRef();
